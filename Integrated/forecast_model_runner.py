@@ -100,9 +100,9 @@ df_final['Forecast_LSTM'] = lstm_preds
 df_final['Forecast_Parametric'] = (
     df_data['Latest Fixing'] * (
         (
-        0.5 * df_data['Var EUR/USD'] +
-        0.3 * df_data['Var GBP/USD'] +
-        0.1 * df_data['Var USD/JPY']
+        - 0.15 * df_data['Var EUR/USD'] +
+        - 0.12 * df_data['Var GBP/USD'] +
+        0.13 * df_data['Var USD/JPY']
     ) + 1 ) + sim_spread
 )
 df_final['Month'] = df_final['Date'].dt.month
